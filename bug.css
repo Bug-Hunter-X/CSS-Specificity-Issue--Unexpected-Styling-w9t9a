@@ -1,0 +1,15 @@
+The following CSS code snippet demonstrates a common error:  Specificity issues can lead to unexpected styling behavior.  In this example, the more specific selector `#myElement.myClass` overrides the less specific selector `.myClass`, resulting in a different background color than intended.
+
+```css
+.myClass {
+  background-color: lightblue; 
+}
+
+#myElement {
+  background-color: lightgreen;
+}
+
+#myElement.myClass {
+  background-color: yellow;
+}
+```
