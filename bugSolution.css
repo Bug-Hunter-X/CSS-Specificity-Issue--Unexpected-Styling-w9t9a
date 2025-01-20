@@ -1,0 +1,40 @@
+To solve the specificity issue, we can modify the selectors or use the `!important` flag (although this is generally discouraged due to potential cascading issues).  In this case, understanding which selector takes precedence is vital. The most specific selector will always win unless !important is used.
+
+Here are two approaches to fix it:
+
+**Approach 1: Adjusting Selectors**
+
+Modify the selectors to avoid conflict by using more specific selectors consistently or using a more general selector for a specific element that has multiple classes and/or IDs. 
+
+```css
+.myClass {
+  background-color: lightblue; 
+}
+
+#myElement {
+  background-color: lightgreen;
+}
+
+/*This selector does not override the previous .myClass selector*/
+.myClass#myElement {
+  background-color: yellow;
+}
+```
+
+**Approach 2: Using `!important` (Use Sparingly)**
+
+Use the `!important` flag to explicitly enforce the desired style rule. However, overuse can make your CSS hard to maintain.
+
+```css
+.myClass {
+  background-color: lightblue !important; 
+}
+
+#myElement {
+  background-color: lightgreen;
+}
+
+#myElement.myClass {
+  background-color: yellow;
+}
+```
